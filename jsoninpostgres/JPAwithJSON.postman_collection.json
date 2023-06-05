@@ -1,0 +1,238 @@
+{
+	"info": {
+		"_postman_id": "759fff02-7728-4c5a-b557-170b4fe48cbb",
+		"name": "JPAwithJSON",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all Students",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/student/",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"student",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a new Student",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"id\": 10, \"name\": \"Mayur\", \"age\": 27, \"city\": \"Delhi\", \"state\": \"Haryana\", \"adult\": true, \"favs\": {\"color\": \"saffron\", \"travel\": [\"Europe\"]}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/student/",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"student",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get students by name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/student/filterByName/Mayur",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"student",
+						"filterByName",
+						"Mayur"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get student by Id i.e. State and City",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/student/filterById?city=Delhi&state=Haryana",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"student",
+						"filterById"
+					],
+					"query": [
+						{
+							"key": "city",
+							"value": "Delhi"
+						},
+						{
+							"key": "state",
+							"value": "Haryana"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter students by Specific Key and Value",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/student/filterByJsonColumnKeyValue/color/saffron",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"student",
+						"filterByJsonColumnKeyValue",
+						"color",
+						"saffron"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a specific key to specified String type value in JSON column",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/student/updateFavs/numAttempts/3/10",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"student",
+						"updateFavs",
+						"numAttempts",
+						"3",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update the value of the specified key to mentioned int type value in JSON column",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/student/updateFavsIntType/num/2/10",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"student",
+						"updateFavsIntType",
+						"num",
+						"2",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update entire json for specified Student Id",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"id\": 10, \"name\": \"Abhishek\", \"age\": 27, \"city\": \"Delhi\", \"state\": \"Haryana\", \"adult\": true, \"favs\": {\"color\": \"navy-blue\", \"travel\": [\"Cuba\"]}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/student/",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"student",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete student by Name",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/student/Karan",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"student",
+						"Karan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a specific keyValue pair in Json column for mentioned ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/student/keyValue/travel/10",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"student",
+						"keyValue",
+						"travel",
+						"10"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
